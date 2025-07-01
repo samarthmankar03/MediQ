@@ -1,0 +1,2 @@
+# MediQ
+Next JS Project
