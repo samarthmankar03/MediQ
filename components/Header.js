@@ -49,7 +49,7 @@ export default function Header() {
         {status === "loading" ? (
           <div>Loading...</div>
         ) : session ? (
-          // User is logged in → show logout button
+       
           <button
             onClick={() => {
               toast.success("Logged out successfully");
@@ -60,7 +60,7 @@ export default function Header() {
             Logout
           </button>
         ) : (
-          // User is not logged in → show login button
+          
           <button
             onClick={() => Router.push("/login")}
             className="bg-white text-blue-600 px-4 py-1 rounded cursor-pointer"

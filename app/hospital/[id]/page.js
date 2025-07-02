@@ -18,7 +18,7 @@ export default async function HospitalDetailPage({ params }) {
           <h1 className="text-3xl font-bold text-gray-800">{hospital.name}</h1>
           <p className="text-gray-600">Location: {hospital.address}</p>
           <p className="text-gray-600">Contact: {hospital.contact}</p>
-          <p className="text-gray-600">Rating: &#11088; {hospital.rating}</p>
+          <p className="text-gray-600">Rating: {hospital.rating}/5</p>
 
           <button className="mt-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
             Book Appointment

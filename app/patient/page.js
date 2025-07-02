@@ -20,8 +20,8 @@ export default function PatientPage() {
         >
           <p className="text-lg font-medium text-gray-800 underline">Nearby Hospitals</p>
           <p className="mt-8">
-            "Find trusted hospitals near your location for quick access and
-            emergency care."
+            Find trusted hospitals near your location for quick access and
+            emergency care.
           </p>
         </div>
 
@@ -31,8 +31,8 @@ export default function PatientPage() {
         >
           <p className="text-lg font-medium text-gray-800 underline">Nearby Doctors</p>
           <p className="mt-8">
-            "Browse experienced doctors available nearby and book your
-            appointment instantly."
+            Browse experienced doctors available nearby and book your
+            appointment instantly.
           </p>
         </div>
       </div>

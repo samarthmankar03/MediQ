@@ -55,10 +55,10 @@ export default function Signup() {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-[90vh] bg-gray-100">
+    <div className="flex justify-center h-[88vh] bg-gray-100">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-6 rounded shadow-md w-80 mt-32"
+        className="bg-white p-6 rounded shadow-md w-80 mt-20 mb-72"
       >
         <h2 className="text-2xl mb-4 text-center font-semibold">Sign Up</h2>
         <input
@@ -89,27 +89,11 @@ export default function Signup() {
           required
         />
         <button
-          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors"
+          className="w-full mt-4 bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors"
           type="submit"
         >
           Sign Up
         </button>
-        <h2 className="text-center my-4">Or continue with :</h2>
-        <div className="flex h-10 justify-center items-center gap-4 border my-4">
-          <button
-            id="google-auth-button"
-            tabIndex={0}
-            type="button"
-            className="flex justify-center gap-2 cursor-pointer"
-          >
-            <img
-              className="h-6"
-              src="https://id-frontend.prod-east.frontend.public.atl-paas.net/assets/google-logo.5867462c.svg"
-              alt=""
-            />
-            <span>Google</span>
-          </button>
-        </div>
       </form>
     </div>
   );

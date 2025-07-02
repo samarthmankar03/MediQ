@@ -84,23 +84,6 @@ export default function Login() {
           Login
         </button>
 
-        <h2 className="text-center my-4">Or continue with :</h2>
-
-        <div className="flex h-10 justify-center items-center gap-4 border my-4">
-          <button
-            type="button"
-            className="flex justify-center gap-2 cursor-pointer"
-            onClick={() => signIn("google")}
-          >
-            <img
-              className="h-6"
-              src="https://id-frontend.prod-east.frontend.public.atl-paas.net/assets/google-logo.5867462c.svg"
-              alt=""
-            />
-            <span>Google</span>
-          </button>
-        </div>
-
         <h2 className="text-center mt-4">
           New here ?{" "}
           <Link href="/signup" className="underline text-blue-500">
