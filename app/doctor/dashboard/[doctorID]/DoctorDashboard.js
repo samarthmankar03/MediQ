@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import toast from "react-hot-toast";
@@ -34,23 +35,22 @@ export default function DoctorDashboard() {
   }, [doctorId]);
 
   const markAsDone = async (appointmentId) => {
-  try {
-    const res = await fetch(`/api/appointments/${appointmentId}`, {
-      method: "DELETE",
-    });
-    if (res.ok) {
-      setAppointments((prev) => prev.filter((app) => app._id !== appointmentId));
-      toast.success("Appointment removed successfully");
-    } else {
-      const data = await res.json();
-      toast.error(data.error || "Failed to delete appointment");
+    try {
+      const res = await fetch(`/api/appointments/${appointmentId}`, {
+        method: "DELETE",
+      });
+      if (res.ok) {
+        setAppointments((prev) => prev.filter((app) => app._id !== appointmentId));
+        toast.success("Appointment removed successfully");
+      } else {
+        const data = await res.json();
+        toast.error(data.error || "Failed to delete appointment");
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("Something went wrong");
     }
-  } catch (err) {
-    console.error(err);
-    toast.error("Something went wrong");
-  }
-};
-
+  };
 
   return (
     <div className="h-[89vh] bg-gray-50 flex flex-col">
@@ -60,9 +60,9 @@ export default function DoctorDashboard() {
       </header>
 
       <main className="flex-1 p-6 grid gap-6 md:grid-cols-12">
-        {/* Appointments section */}
+ 
         <div className="bg-white rounded-2xl shadow p-4 md:col-span-8">
-          <h2 className="text-lg font-semibold mb-4">Today's Appointments</h2>
+          <h2 className="text-lg font-semibold mb-4">Today&apos;s Appointments</h2>
           <hr />
 
           {loading ? (
@@ -91,7 +91,6 @@ export default function DoctorDashboard() {
           )}
         </div>
 
-        {/* Notifications section */}
         <div className="bg-white rounded-2xl shadow p-4 md:col-span-4">
           <h2 className="text-lg font-semibold mb-4">Notifications</h2>
           <hr />

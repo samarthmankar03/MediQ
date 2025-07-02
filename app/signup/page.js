@@ -5,10 +5,10 @@ import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
 
-export default function signup() {
+export default function Signup() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const role = searchParams.get("role"); 
+  const role = searchParams.get("role");
 
   const [formData, setFormdata] = useState({
     name: "",
@@ -16,6 +16,7 @@ export default function signup() {
     password: "",
     role: "",
   });
+
   function handleChange(e) {
     const { name, value } = e.target;
     setFormdata((prev) => ({
@@ -34,30 +35,27 @@ export default function signup() {
         name: formData.name,
         email: formData.email,
         password: formData.password,
-        role: role, 
+        role: role,
       }),
     });
 
-    
     const data = await res.json();
     const doctorID = data.id;
 
     if (res.ok) {
-      toast.success("Succesfully signed up")
-      if(role=="doctor"){
-          router.push(`/doctor/dashboard/${doctorID}`);
+      toast.success("Successfully signed up");
+      if (role == "doctor") {
+        router.push(`/doctor/dashboard/${doctorID}`);
+      } else {
+        router.push("/hospitals");
       }
-      else{
-          router.push("/hospitals");
-      }
-      
     } else {
-      toast.error("add valid inputs");
+      toast.error("Add valid inputs");
     }
   }
 
   return (
-    <div className="flex justify-center items-center min-[90vh] bg-gray-100">
+    <div className="flex justify-center items-center min-h-[90vh] bg-gray-100">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded shadow-md w-80 mt-32"
@@ -109,8 +107,7 @@ export default function signup() {
               src="https://id-frontend.prod-east.frontend.public.atl-paas.net/assets/google-logo.5867462c.svg"
               alt=""
             />
-
-            <span className="">Google</span>
+            <span>Google</span>
           </button>
         </div>
       </form>

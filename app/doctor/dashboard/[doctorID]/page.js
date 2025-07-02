@@ -3,7 +3,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 import DoctorDashboard from "./DoctorDashboard";
 
-export default async function DoctorDashboard() {
+export default async function DoctorDashboardPage() {
   const session = await getServerSession(authOptions);
   if (!session) {
     redirect("/login");
