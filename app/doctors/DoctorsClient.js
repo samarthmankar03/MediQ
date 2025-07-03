@@ -36,7 +36,6 @@ export default function DoctorsClient() {
                 height={300} 
                 className="w-full h-48 object-cover"
               />
-              If you&apos;d like,
               <div className="p-4">
                 <h2 className="text-lg font-semibold mb-1">{doctor.name}</h2>
                 <p className="text-gray-600 text-sm mb-1">
